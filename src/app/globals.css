@@ -1,29 +1,38 @@
 @import "tailwindcss";
 
-/* Calm, cozy theme – muted beige / soft slate + glassmorphism */
+/* Palette: Muted Plum #78516D, Slate Blue #524E75, Terracotta #B75D49, Goldenrod #D19846, Cream #FFEECB */
 :root {
-  --background: #e8e4df;
-  --foreground: #5c574f;
-  --graphite-muted: #b5b0a8;
-  --graphite-blush: #e2d5d2;
-  --graphite-olive: #6b6559;
-  --graphite-slate: #7a8594;
-  --glass-bg: rgba(255, 255, 255, 0.55);
-  --glass-border: rgba(180, 175, 168, 0.4);
-  --shadow-soft: 0 2px 12px rgba(92, 87, 79, 0.06);
-  --shadow-diffuse: 0 4px 24px rgba(92, 87, 79, 0.08);
-  /* Pastel row tints */
-  --row-sage: rgba(192, 205, 188, 0.5);
-  --row-lavender: rgba(205, 195, 215, 0.5);
-  --row-peach: rgba(220, 200, 188, 0.5);
-  --row-sky: rgba(195, 210, 220, 0.5);
-  --row-mint: rgba(195, 218, 210, 0.5);
-  --row-blush: rgba(218, 200, 198, 0.5);
+  --background: #2a2535;
+  --foreground: #FFEECB;
+  --plum: #78516D;
+  --slate-blue: #524E75;
+  --terracotta: #B75D49;
+  --goldenrod: #D19846;
+  --cream: #FFEECB;
+  --graphite-muted: #9a8f9a;
+  --graphite-blush: #6b5268;
+  --graphite-olive: #e8dcc8;
+  --graphite-slate: #c4b8b0;
+  --glass-bg: rgba(42, 37, 53, 0.88);
+  --glass-border: rgba(255, 238, 203, 0.12);
+  --shadow-soft: 0 2px 16px rgba(0, 0, 0, 0.35);
+  --shadow-diffuse: 0 4px 28px rgba(0, 0, 0, 0.45);
+  --row-sage: rgba(120, 81, 109, 0.35);
+  --row-lavender: rgba(82, 78, 117, 0.35);
+  --row-peach: rgba(183, 93, 73, 0.25);
+  --row-sky: rgba(82, 78, 117, 0.25);
+  --row-mint: rgba(120, 81, 109, 0.25);
+  --row-blush: rgba(209, 152, 70, 0.2);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-plum: var(--plum);
+  --color-slate-blue: var(--slate-blue);
+  --color-terracotta: var(--terracotta);
+  --color-goldenrod: var(--goldenrod);
+  --color-cream: var(--cream);
   --color-graphite-muted: var(--graphite-muted);
   --color-graphite-blush: var(--graphite-blush);
   --color-graphite-olive: var(--graphite-olive);

@@ -1,112 +1,61 @@
 import Link from "next/link";
 import FloatingFeatures from "@/components/FloatingFeatures";
-import JoinCTA from "@/components/JoinCTA";
+import LandingHeader from "@/components/LandingHeader";
 
 export default function Home(): React.ReactElement {
   return (
     <div className="relative min-h-screen overflow-hidden font-sans">
-      {/* Med-care background */}
-      <div className="absolute inset-0 bg-background" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#524E75] via-[#3d3958] to-[#78516D]" />
       <div
         className="absolute inset-0 opacity-[0.06]"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10v40M10 30h40' stroke='%236b6559' stroke-width='1.5' fill='none'/%3E%3Cpath d='M25 15l10 10 10-10M25 45l10-10 10 10' stroke='%236b6559' stroke-width='1' fill='none'/%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10v40M10 30h40' stroke='%23FFEECB' stroke-width='1' fill='none'/%3E%3Cpath d='M25 15l10 10 10-10M25 45l10-10 10 10' stroke='%23FFEECB' stroke-width='0.5' fill='none'/%3E%3C/svg%3E")`,
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-graphite-blush/25 via-transparent to-graphite-blush/15" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-[#B75D49]/10" />
 
       <main className="relative z-10 mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
         <header className="flex flex-wrap items-center justify-between gap-4 py-4">
           <Link
             href="/"
-            className="text-xl font-bold tracking-tight text-graphite-olive"
+            className="text-xl font-bold tracking-tight text-cream"
           >
             MedCare
           </Link>
-          <div className="flex items-center gap-2">
-            <Link
-              href="/dashboard"
-              className="rounded-xl border border-glass bg-glass px-3 py-2 text-sm font-medium text-graphite-slate shadow-soft backdrop-blur-md hover:bg-white/60"
-            >
-              Dashboard
-            </Link>
-            <Link
-              href="/login"
-              className="rounded-xl border border-glass bg-glass px-4 py-2 text-sm font-medium text-graphite-olive shadow-soft backdrop-blur-md hover:bg-white/60"
-            >
-              Sign in
-            </Link>
-          </div>
+          <LandingHeader />
         </header>
 
-        {/* Hero */}
-        <section className="py-16 text-center sm:py-24">
-          <h1
-            className="animate-fade-in-up mx-auto max-w-3xl text-4xl font-bold leading-tight text-graphite-olive sm:text-5xl lg:text-6xl"
-            style={{ animationDelay: "0.1s" }}
-          >
+        <section className="flex flex-col items-center py-16 text-center sm:py-24">
+          <h1 className="mx-auto max-w-3xl text-4xl font-bold leading-tight text-cream sm:text-5xl lg:text-6xl">
             Care for your grandparents, one dose at a time
           </h1>
-          <p
-            className="animate-fade-in-up mx-auto mt-6 max-w-xl text-lg text-graphite-slate"
-            style={{ animationDelay: "0.25s" }}
-          >
+          <p className="mx-auto mt-6 max-w-xl text-lg text-graphite-slate">
             Upload a prescription or add medicines manually. Our AI helps you
             keep track and never miss a reminder.
           </p>
-          <div
-            className="animate-fade-in-up mt-12 flex justify-center"
-            style={{ animationDelay: "0.4s" }}
+          <Link
+            href="/login"
+            className="mt-10 inline-flex rounded-2xl border border-glass bg-goldenrod/40 px-8 py-4 text-lg font-semibold text-cream shadow-diffuse backdrop-blur-md transition-colors hover:bg-goldenrod/60"
           >
-            <JoinCTA />
-          </div>
+            Get started
+          </Link>
         </section>
 
-        {/* Floating feature tags */}
         <section className="relative">
           <FloatingFeatures />
         </section>
 
-        {/* Feature grid */}
-        <section className="grid gap-6 py-16 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            {
-              title: "AI prescription scan",
-              desc: "Upload a photo and we extract medicines, dosage and timings automatically.",
-              icon: "📋",
-            },
-            {
-              title: "Manual entry",
-              desc: "Prefer to type? Add medicine names, dosage and times in seconds.",
-              icon: "✏️",
-            },
-            {
-              title: "Smart reminders",
-              desc: "Schedules synced so your family stays on top of every dose.",
-              icon: "⏰",
-            },
-          ].map((item, i) => (
-            <div
-              key={item.title}
-              className="animate-fade-in-up rounded-2xl border border-glass bg-glass p-6 shadow-soft backdrop-blur-md"
-              style={{ animationDelay: `${0.5 + i * 0.1}s` }}
-            >
-              <span className="text-2xl" aria-hidden>
-                {item.icon}
-              </span>
-              <h3 className="mt-3 font-semibold text-graphite-olive">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm text-graphite-slate">{item.desc}</p>
-            </div>
-          ))}
-        </section>
-
-        {/* Bottom CTA */}
-        <section className="py-16 text-center">
-          <p className="text-graphite-slate">Ready to get started?</p>
-          <div className="mt-4">
-            <JoinCTA />
+        <section id="about" className="scroll-mt-24 py-16">
+          <h2 className="mb-6 text-2xl font-bold text-cream">
+            About Us
+          </h2>
+          <div className="rounded-2xl border border-glass bg-glass p-8 shadow-soft backdrop-blur-md">
+            <p className="leading-relaxed text-graphite-slate">
+              MedCare helps families keep their grandparents on track with
+              medications. Upload a prescription for AI-powered extraction, or
+              add medicines and times manually. View and manage schedules by
+              person in your caregiver dashboard, and never miss a dose.
+            </p>
           </div>
         </section>
       </main>

@@ -46,13 +46,14 @@ export default async function JoinPage(): Promise<React.ReactElement> {
 
   return (
     <div className="relative min-h-screen overflow-hidden font-sans">
-      <div className="absolute inset-0 bg-background" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#524E75] via-[#3d3958] to-[#78516D]" />
       <div
-        className="absolute inset-0 opacity-[0.05]"
+        className="absolute inset-0 opacity-[0.06]"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10v40M10 30h40' stroke='%236b6559' stroke-width='1' fill='none'/%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10v40M10 30h40' stroke='%23FFEECB' stroke-width='1' fill='none'/%3E%3C/svg%3E")`,
         }}
       />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-[#B75D49]/10" />
 
       <main className="relative z-10 mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <header className="mb-8 flex flex-wrap items-center justify-between gap-4">
@@ -65,13 +66,13 @@ export default async function JoinPage(): Promise<React.ReactElement> {
           <div className="flex items-center gap-2">
             <Link
               href="/dashboard"
-              className="rounded-xl border border-glass bg-glass px-3 py-2 text-sm font-medium text-graphite-slate shadow-soft backdrop-blur-md hover:bg-white/60"
+              className="rounded-xl border border-glass bg-glass px-3 py-2 text-sm font-medium text-graphite-slate shadow-soft backdrop-blur-md hover:bg-white/10"
             >
               Dashboard
             </Link>
             <Link
               href="/login"
-              className="rounded-xl border border-glass bg-glass px-3 py-2 text-sm font-medium text-graphite-olive shadow-soft backdrop-blur-md hover:bg-white/60"
+              className="rounded-xl border border-glass bg-glass px-3 py-2 text-sm font-medium text-graphite-olive shadow-soft backdrop-blur-md hover:bg-white/10"
             >
               Sign in
             </Link>

@@ -64,7 +64,7 @@ export default function ManualMedicationForm(): React.ReactElement {
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.message || res.statusText || "Failed to add.");
+        throw new Error((data as { message?: string }).message || res.statusText || "Failed to add.");
       }
 
       setSuccess(true);
@@ -79,7 +79,7 @@ export default function ManualMedicationForm(): React.ReactElement {
   }
 
   return (
-    <div className="rounded-2xl border border-glass bg-white/60 p-6 shadow-soft backdrop-blur-md">
+    <div className="rounded-2xl border border-glass bg-glass p-6 shadow-soft backdrop-blur-md">
       <h2 className="mb-4 text-lg font-semibold text-graphite-olive">
         Add medicines manually
       </h2>
@@ -97,7 +97,7 @@ export default function ManualMedicationForm(): React.ReactElement {
             value={patientName}
             onChange={(e) => setPatientName(e.target.value)}
             placeholder="e.g. Grandpa Anil"
-            className="w-full rounded-xl border border-glass bg-white/60 px-3 py-2 text-graphite-olive placeholder-graphite-muted backdrop-blur-md focus:border-graphite-slate focus:outline-none focus:ring-1 focus:ring-graphite-slate"
+            className="w-full rounded-xl border border-glass bg-white/10 px-3 py-2 text-graphite-olive placeholder-graphite-muted backdrop-blur-md focus:border-graphite-slate focus:outline-none focus:ring-1 focus:ring-graphite-slate"
           />
         </div>
         <div>
@@ -113,7 +113,7 @@ export default function ManualMedicationForm(): React.ReactElement {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="+91 98765 43210"
-            className="w-full rounded-xl border border-glass bg-white/60 px-3 py-2 text-graphite-olive placeholder-graphite-muted backdrop-blur-md focus:border-graphite-slate focus:outline-none focus:ring-1 focus:ring-graphite-slate"
+            className="w-full rounded-xl border border-glass bg-white/10 px-3 py-2 text-graphite-olive placeholder-graphite-muted backdrop-blur-md focus:border-graphite-slate focus:outline-none focus:ring-1 focus:ring-graphite-slate"
             required
           />
         </div>
@@ -134,27 +134,27 @@ export default function ManualMedicationForm(): React.ReactElement {
           {medications.map((row, i) => (
             <div
               key={i}
-              className="flex flex-wrap items-end gap-2 rounded-xl border border-glass bg-white/50 p-3 backdrop-blur-sm"
+              className="flex flex-wrap items-end gap-2 rounded-xl border border-glass bg-white/5 p-3 backdrop-blur-sm"
             >
               <input
                 type="text"
                 placeholder="Medicine name"
                 value={row.medication_name}
                 onChange={(e) => updateRow(i, "medication_name", e.target.value)}
-                className="min-w-[120px] flex-1 rounded-lg border border-glass bg-white/60 px-2 py-1.5 text-sm text-graphite-olive placeholder-graphite-muted focus:border-graphite-slate focus:outline-none"
+                className="min-w-[120px] flex-1 rounded-lg border border-glass bg-white/10 px-2 py-1.5 text-sm text-graphite-olive placeholder-graphite-muted focus:border-graphite-slate focus:outline-none"
               />
               <input
                 type="text"
                 placeholder="Dosage"
                 value={row.dosage}
                 onChange={(e) => updateRow(i, "dosage", e.target.value)}
-                className="w-24 rounded-lg border border-glass bg-white/60 px-2 py-1.5 text-sm text-graphite-olive placeholder-graphite-muted focus:border-graphite-slate focus:outline-none"
+                className="w-24 rounded-lg border border-glass bg-white/10 px-2 py-1.5 text-sm text-graphite-olive placeholder-graphite-muted focus:border-graphite-slate focus:outline-none"
               />
               <input
                 type="time"
                 value={row.time_due}
                 onChange={(e) => updateRow(i, "time_due", e.target.value)}
-                className="rounded-lg border border-glass bg-white/60 px-2 py-1.5 text-sm text-graphite-olive focus:border-graphite-slate focus:outline-none"
+                className="rounded-lg border border-glass bg-white/10 px-2 py-1.5 text-sm text-graphite-olive focus:border-graphite-slate focus:outline-none"
               />
               <button
                 type="button"
@@ -184,11 +184,11 @@ export default function ManualMedicationForm(): React.ReactElement {
         <button
           type="submit"
           disabled={isLoading}
-          className="flex items-center justify-center rounded-xl bg-graphite-olive px-4 py-2.5 text-sm font-medium text-white shadow-soft transition-colors hover:bg-graphite-slate disabled:cursor-not-allowed disabled:opacity-60"
+          className="flex items-center justify-center rounded-xl bg-goldenrod/60 px-4 py-2.5 text-sm font-medium text-cream shadow-soft transition-colors hover:bg-goldenrod/80 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isLoading ? (
             <>
-              <span className="mr-2 size-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+              <span className="mr-2 size-4 animate-spin rounded-full border-2 border-graphite-olive border-t-transparent" />
               Saving…
             </>
           ) : (
